@@ -5,9 +5,7 @@
 Welcome to the **Chest X-ray Lung Segmentation Challenge!**
 
 The goal of this competition is to develop a deep learning model that can automatically identify and segment the lung regions in chest X-ray images.
-
 Participants will use the provided training data to build and evaluate their segmentation models and generate predictions for the unseen test images.
-
 This competition focuses on **Binary Semantic Segmentation**.
 
 For each test image, participants must predict a binary segmentation mask that identifies the lung regions and separates them from the background.
@@ -30,6 +28,8 @@ Additional clinical and demographic information, including age, gender, and coun
 
 The dataset is sourced from Kaggle: [Chest X-ray Lungs Segmentation](https://www.kaggle.com/datasets/iamtapendu/chest-x-ray-lungs-segmentation)
 
+
+
 ## Evaluation
 
 The submissions will be evaluated using the Dice Score.
@@ -47,6 +47,42 @@ Where:
 ## Baseline
 
 A U-Net implementation is provided as a starting point.
+
+
+## Submission
+
+**_Ready to compete?_** 
+Follow these steps to get your model on the leaderboard!
+* Each participant must fork this repository to their GitHub account.
+* Each participant needs to use the provided starter code as a baseline and implement your model (while respecting all constraints!).
+* After generating predictions on the test set, convert the predicted masks into RLE format using the provided code and save them in your_team_name_submission.csv.:\
+   image_id,encoded_mask .
+* Ensure:
+    The file contains predictions for all test nodes.\
+    The order of IDs matches test.\
+    The file name is your_team_name_submission.csv
+* To ensure fair evaluation, all submissions must be encrypted before being uploaded. Use the provided public key:
+ ```
+python encryption/encrypt.py your_team_name_submission.csv 
+```
+This generates: your_team_name_submission.csv.enc
+* Move the encrypted .enc file into the submissions/ folder, commit and push your changes and open a Pull Request to the main repository.
+* Once your Pull Request is opened:\
+    Your submission will be automatically evaluated.\
+    The score will be computed using the hidden test labels.\
+    Your result will be added to the leaderboard.
+
+ 🌟Higher scores climb higher🌟
+  
+## 🏆Leaderboard
+The competition features a **dynamic, automatically updated leaderboard**.
+* All scores are stored and displayed in real-time on docs/leaderboard.html.
+* Participants are ranked according to the official evaluation metric (Dice metric).
+* Each entry shows: Rank, Team Name, Score, and Submission Date.
+* The leaderboard updates automatically whenever a valid submission is made via a Pull Request, no manual intervention is needed.
+
+✨Watch your team climb the ranks as you submit! 
+
 
 ## Rules
 
