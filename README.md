@@ -34,11 +34,15 @@ A U-Net implementation is provided as a starting point.
 The submissions will be evaluated using the Dice Score.
 Dice Similarity Coefficient (DSC): Measures the overlap between the predicted segmentation mask and the ground-truth mask. It ranges from 0 to 1, where 1 indicates a perfect match and 0 indicates no overlap. Higher Dice scores indicate better segmentation performance.
 
-Formula:
+**Formula:**
 
-\\[ Dice = \frac{2|A \cap B|}{|A|+|B|} \\]
+\[
+Dice = \frac{2|A \cap B|}{|A| + |B|}
+\]
 
-Where \\(A\\) is the predicted mask and \\(B\\) is the ground-truth mask.
+Where:
+- `A` represents the predicted mask.
+- `B` represents the ground-truth mask.
 
 ## Rules
 
