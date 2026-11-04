@@ -36,9 +36,7 @@ Dice Similarity Coefficient (DSC): Measures the overlap between the predicted se
 
 **Formula:**
 
-\[
-Dice = \frac{2|A \cap B|}{|A| + |B|}
-\]
+$$\text{Dice} = \frac{2 |A \cap B|}{|A| + |B|}$$
 
 Where:
 - `A` represents the predicted mask.
