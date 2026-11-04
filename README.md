@@ -30,6 +30,18 @@ The dataset is sourced from Kaggle: [Chest X-ray Lungs Segmentation](https://www
 
 Examples of the Chest X-Ray images and its masks:
 
+<table>
+  <tr>
+    <td>
+      <img src="images/CXR.png" alt="Chest X-Ray" width="300"/>
+    </td>
+    <td>
+      <img src="images/Mask.png" alt="Mask" width="300"/>
+    </td>
+  </tr>
+</table>
+
+
 ![Chest X-Ray](images/CXR.png)
 ![Mask](images/Mask.png)
 
