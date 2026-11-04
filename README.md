@@ -1,6 +1,4 @@
-# CRX_Cup
-
-# Chest X-ray Lung Segmentation Challenge
+# Chest X-ray Lung Segmentation Competition
 
 ## About the Competition
 
@@ -16,6 +14,15 @@ Participants must predict a binary segmentation mask for every provided test ima
 - Background pixels: 0
 
 ## Dataset
+
+The Chest **X-ray Dataset for Tuberculosis Segmentation** dataset contains **704 chest X-ray images** collected from two sources:
+
+- **Montgomery County Chest X-ray Database (USA)**
+- **Shenzhen Chest X-ray Database (China)**
+
+The dataset includes both **tuberculosis (TB)-positive and normal chest X-ray images**. Each image is accompanied by a corresponding **lung segmentation mask**, which identifies the lung regions.
+
+Additional clinical and demographic information, including age, gender, and country of origin, is also provided.
 
 The dataset is sourced from Kaggle:
 
