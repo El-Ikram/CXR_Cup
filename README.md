@@ -2,20 +2,24 @@
 
 ## About the Competition
 
-Welcome to the Chest X-ray Lung Segmentation Challenge!
+Welcome to the **Chest X-ray Lung Segmentation Challenge!**
 
-The objective is to develop an image segmentation model that identifies and segments the lung regions in chest X-ray images.
+The goal of this competition is to develop a deep learning model that can automatically identify and segment the lung regions in chest X-ray images.
 
-## Task
+Participants will use the provided training data to build and evaluate their segmentation models and generate predictions for the unseen test images.
 
-Participants must predict a binary segmentation mask for every provided test image.
+This competition focuses on **Binary Semantic Segmentation**.
 
-- Lung pixels: 1
-- Background pixels: 0
+For each test image, participants must predict a binary segmentation mask that identifies the lung regions and separates them from the background.
+
+- **Lung pixels:** 1
+- **Background pixels:** 0
+
+The predicted masks will be compared with the ground-truth masks using the **Dice Similarity Coefficient (DSC)** to evaluate segmentation performance.
 
 ## Dataset
 
-The Chest **X-ray Dataset for Tuberculosis Segmentation** dataset contains **704 chest X-ray images** collected from two sources:
+The **Chest X-ray Dataset for Tuberculosis Segmentation** contains **704 chest X-ray images** collected from two sources:
 
 - **Montgomery County Chest X-ray Database (USA)**
 - **Shenzhen Chest X-ray Database (China)**
@@ -24,17 +28,7 @@ The dataset includes both **tuberculosis (TB)-positive and normal chest X-ray im
 
 Additional clinical and demographic information, including age, gender, and country of origin, is also provided.
 
-The dataset is sourced from Kaggle:
-
-[Chest X-ray Lungs Segmentation](https://www.kaggle.com/datasets/iamtapendu/chest-x-ray-lungs-segmentation)
-
-## Task Type
-
-Binary Semantic Segmentation.
-
-## Baseline
-
-A U-Net implementation is provided as a starting point.
+The dataset is sourced from Kaggle: [Chest X-ray Lungs Segmentation](https://www.kaggle.com/datasets/iamtapendu/chest-x-ray-lungs-segmentation)
 
 ## Evaluation
 
@@ -48,6 +42,11 @@ $$\text{Dice} = \frac{2 |A \cap B|}{|A| + |B|}$$
 Where:
 - `A` represents the predicted mask.
 - `B` represents the ground-truth mask.
+
+
+## Baseline
+
+A U-Net implementation is provided as a starting point.
 
 ## Rules
 
