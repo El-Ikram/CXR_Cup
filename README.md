@@ -28,6 +28,10 @@ Additional clinical and demographic information, including age, gender, and coun
 
 The dataset is sourced from Kaggle: [Chest X-ray Lungs Segmentation](https://www.kaggle.com/datasets/iamtapendu/chest-x-ray-lungs-segmentation)
 
+Examples of the Chest X-Ray images and its masks:
+
+![Chest X-Ray](images/CXR.png)
+![Mask](images/Mask.png)
 
 
 ## Evaluation
