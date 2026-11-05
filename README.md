@@ -23,12 +23,20 @@ The **Chest X-ray Dataset for Tuberculosis Segmentation** contains **704 chest X
 - **Shenzhen Chest X-ray Database (China)**
 
 The dataset includes both **tuberculosis (TB)-positive and normal chest X-ray images**. Each image is accompanied by a corresponding **lung segmentation mask**, which identifies the lung regions.
-
 Additional clinical and demographic information, including age, gender, and country of origin, is also provided.
 
 The dataset is sourced from Kaggle: [Chest X-ray Lungs Segmentation](https://www.kaggle.com/datasets/iamtapendu/chest-x-ray-lungs-segmentation)
 
+The dataset is divided into two subsets:
+
+Training Set (70%): Approximately 493 images with their corresponding segmentation masks, provided to participants for model training.
+
+Testing Set (30%): Approximately 211 images used to evaluate the performance of the submitted models.
+
+The ground-truth masks of the test set are kept hidden and are used for evaluation.
+
 Examples of the Chest X-Ray images and its masks:
+
 
 <div align="center">
 
@@ -63,7 +71,7 @@ Where:
 
 ## Baseline
 
-A U-Net implementation is provided as a starting point.
+A simple U-Net model is provided as starter code to help participants get started with the competition. It demonstrates how to load the images and masks, train a segmentation model, generate predictions on the test images, and prepare the submission file using RLE encoding. Participants are encouraged to use this baseline as a starting point and experiment with different models and techniques to improve their results.
 
 
 ## Submission
@@ -119,4 +127,7 @@ The competition features a **dynamic, automatically updated leaderboard**.
 
 ## Contact
 
-For questions, use the GitHub Issues section.
+##
+##
+
+Never Stop coding!    
