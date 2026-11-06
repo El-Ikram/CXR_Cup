@@ -34,6 +34,7 @@ Training Set (70%): Approximately 493 images with their corresponding segmentati
 Testing Set (30%): Approximately 211 images used to evaluate the performance of the submitted models.
 
 The ground-truth masks of the test set are kept hidden and are used for evaluation.
+All original chest X-ray images and their corresponding segmentation masks are resized to 256 × 256 pixels to ensure consistent image dimensions for model training and evaluation.
 
 Examples of the Chest X-Ray images and its masks:
 
