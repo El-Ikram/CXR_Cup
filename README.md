@@ -1,5 +1,5 @@
 # Chest X-ray Lung Segmentation Competition
-[Leaderboard](https://YOUR-GITHUB-USERNAME.github.io/CXR_Cup/leaderboard.html)
+[Leaderboard](https://El-Ikram.github.io/CXR_Cup/leaderboard.html)
 
 ## About the Competition
 
