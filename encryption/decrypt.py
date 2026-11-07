@@ -3,17 +3,15 @@ import base64
 import os
 import sys
 
+from pathlib import Path
 from cryptography.hazmat.primitives import serialization, hashes
 from cryptography.hazmat.primitives.asymmetric import padding
 from cryptography.fernet import Fernet
 
 
-def decrypt_submission(encrypted_file_path):
+def decrypt_submission(encrypted_file_path, output_file=None):
 
-    # Get script directory
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-
-    # Load private key
+    # Load private key from GitHub Actions secret
     private_key_b64 = os.environ.get("PRIVATE_KEY_B64")
 
     if not private_key_b64:
@@ -33,6 +31,9 @@ def decrypt_submission(encrypted_file_path):
     # Determine RSA encrypted key size
     rsa_size = private_key.key_size // 8
 
+    if len(encrypted_file_data) <= rsa_size:
+        raise ValueError("Encrypted submission file is incomplete.")
+
     # Separate encrypted session key and encrypted CSV
     encrypted_session_key = encrypted_file_data[:rsa_size]
     encrypted_data = encrypted_file_data[rsa_size:]
@@ -51,19 +52,31 @@ def decrypt_submission(encrypted_file_path):
     cipher_suite = Fernet(session_key)
     decrypted_data = cipher_suite.decrypt(encrypted_data)
 
-    # Output CSV filename
-    output_file = encrypted_file_path[:-4] + ".csv"
+    # Determine output filename
+    if output_file is None:
+        output_file = str(Path(encrypted_file_path).with_suffix(""))
 
-    with open(output_file, "wb") as f:
+    # Save decrypted CSV
+    output_path = Path(output_file)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+
+    with open(output_path, "wb") as f:
         f.write(decrypted_data)
 
     print("Submission decrypted successfully!")
-    print("Output file:", output_file)
+    print("Output file:", output_path)
 
 
 if __name__ == "__main__":
 
-    if len(sys.argv) < 2:
-        print("Usage: python decrypt_submission.py <encrypted_file>")
-    else:
-        decrypt_submission(sys.argv[1])
+    if len(sys.argv) not in (2, 3):
+        print(
+            "Usage: python decrypt.py "
+            "<encrypted_file> [output_file]"
+        )
+        sys.exit(1)
+
+    encrypted_file = sys.argv[1]
+    output_file = sys.argv[2] if len(sys.argv) == 3 else None
+
+    decrypt_submission(encrypted_file, output_file)
