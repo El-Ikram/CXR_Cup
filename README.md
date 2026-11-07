@@ -81,8 +81,8 @@ A simple U-Net model is provided as starter code to help participants get starte
 **_Ready to compete?_** 
 Follow these steps to get your model on the leaderboard!
 * Each participant must fork this repository to their GitHub account.
-* Each participant needs to use the provided starter code as a baseline and implement your model (while respecting all constraints!).
-* After generating predictions on the test set, convert the predicted masks into RLE format using the provided code and save them in your_team_name_submission.csv.:\
+* Each participant must use the provided starter code as a baseline and implement their own model while respecting all competition constraints.
+* The baseline code will generate predictions on the test set and convert the predicted masks into RLE format using the provided code. Save the resulting file as your_team_name_submission.csv with the following columns:\
    image_id,encoded_mask .
 * Ensure:
     The file contains predictions for all test nodes.\
@@ -102,7 +102,7 @@ This generates: your_team_name_submission.csv.enc
  🌟Higher scores climb higher🌟
   
 ## 🏆Leaderboard
-The competition features a **dynamic, automatically updated leaderboard**.
+The competition features a **dynamic, automatically updated [leaderboard](https://El-Ikram.github.io/CXR_Cup/leaderboard.html)**.
 * All scores are stored and displayed in real-time on docs/leaderboard.html.
 * Participants are ranked according to the official evaluation metric (Dice metric).
 * Each entry shows: Rank, Team Name, Score, and Submission Date.
