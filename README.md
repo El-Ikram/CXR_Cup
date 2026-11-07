@@ -1,4 +1,5 @@
 # Chest X-ray Lung Segmentation Competition
+[Leaderboard](https://El-Ikram.github.io/CXR_Cup/leaderboard.html)
 
 ## About the Competition
 
