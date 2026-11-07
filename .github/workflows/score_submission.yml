@@ -81,7 +81,11 @@ jobs:
         env:
           PRIVATE_KEY_B64: ${{ secrets.PRIVATE_KEY_B64 }}
         run: |
-          python encryption/decrypt.py "$RUNNER_TEMP/submission.csv.enc"
+          python encryption/decrypt.py \
+            "$RUNNER_TEMP/submission.csv.enc" \
+            "$RUNNER_TEMP/submission.csv"
+      
+          ls -l "$RUNNER_TEMP/submission.csv"
 
       # 9. Validate and evaluate the segmentation submission
       - name: Evaluate submission
