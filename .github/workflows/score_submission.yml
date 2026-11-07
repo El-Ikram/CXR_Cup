@@ -27,9 +27,11 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.sha }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
           path: incoming
           sparse-checkout: submissions
           persist-credentials: false
+          allow-unsafe-pr-checkout: true
 
       # 3. Checkout private evaluation repository
       - name: Checkout private evaluation repository
